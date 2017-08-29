@@ -1,0 +1,587 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>7.1 数据迁移类测试注意事项 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="下单接口.html" />
+    
+    
+    <link rel="prev" href="../其他.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    测试分享
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../接口测试.html">
+            
+                <a href="../接口测试.html">
+            
+                    
+                    1.接口测试
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../api/接口测试入门指南.html">
+            
+                <a href="../api/接口测试入门指南.html">
+            
+                    
+                    1.1 接口测试入门指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../api/框架详解.html">
+            
+                <a href="../api/框架详解.html">
+            
+                    
+                    1.2 框架详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../api/工具详解.html">
+            
+                <a href="../api/工具详解.html">
+            
+                    
+                    1.3 工具详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../api/踩过的坑.html">
+            
+                <a href="../api/踩过的坑.html">
+            
+                    
+                    1.4 踩过的坑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../api/头脑风暴.html">
+            
+                <a href="../api/头脑风暴.html">
+            
+                    
+                    1.5 头脑风暴-待汇总
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../api/dubbo接口测试.html">
+            
+                <a href="../api/dubbo接口测试.html">
+            
+                    
+                    1.6 dubbo 接口测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../服务端性能测试.html">
+            
+                <a href="../服务端性能测试.html">
+            
+                    
+                    2.服务端性能测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../移动端性能测试.html">
+            
+                <a href="../移动端性能测试.html">
+            
+                    
+                    3.移动端性能测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../安全测试.html">
+            
+                <a href="../安全测试.html">
+            
+                    
+                    4.安全测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../工具使用.html">
+            
+                <a href="../工具使用.html">
+            
+                    
+                    5.常用工具
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../tools/SourceTree使用.html">
+            
+                <a href="../tools/SourceTree使用.html">
+            
+                    
+                    5.1 SourceTree
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../tools/Xshell使用.html">
+            
+                <a href="../tools/Xshell使用.html">
+            
+                    
+                    5.2 xshell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../tools/fiddler使用.html">
+            
+                <a href="../tools/fiddler使用.html">
+            
+                    
+                    5.3 fiddler
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../tools/navicat使用.html">
+            
+                <a href="../tools/navicat使用.html">
+            
+                    
+                    5.4 navicat
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../测试周边技术.html">
+            
+                <a href="../测试周边技术.html">
+            
+                    
+                    6.测试周边技术补习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../tips/git.html">
+            
+                <a href="../tips/git.html">
+            
+                    
+                    6.1 git的使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../tips/markdown.html">
+            
+                <a href="../tips/markdown.html">
+            
+                    
+                    6.2 markdown基础语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../其他.html">
+            
+                <a href="../其他.html">
+            
+                    
+                    7.其他
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.8.1" data-path="数据迁移类测试注意事项.html">
+            
+                <a href="数据迁移类测试注意事项.html">
+            
+                    
+                    7.1 数据迁移类测试注意事项
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="下单接口.html">
+            
+                <a href="下单接口.html">
+            
+                    
+                    7.2 下单接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="测试常见考虑疏漏点.html">
+            
+                <a href="测试常见考虑疏漏点.html">
+            
+                    
+                    7.3 测试常见考虑疏漏点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="和产品的约定.html">
+            
+                <a href="和产品的约定.html">
+            
+                    
+                    7.4 和产品的约定
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >7.1 数据迁移类测试注意事项</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="71-&#x6570;&#x636E;&#x8FC1;&#x79FB;&#x7C7B;&#x6D4B;&#x8BD5;&#x6CE8;&#x610F;&#x4E8B;&#x9879;">7.1 &#x6570;&#x636E;&#x8FC1;&#x79FB;&#x7C7B;&#x6D4B;&#x8BD5;&#x6CE8;&#x610F;&#x4E8B;&#x9879;</h1>
+<h3 id="1&#x3001;&#x8001;&#x8868;&#x548C;&#x65B0;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#x8981;&#x641E;&#x6E05;&#x695A;">1&#x3001;&#x8001;&#x8868;&#x548C;&#x65B0;&#x8868;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#x8981;&#x641E;&#x6E05;&#x695A;</h3>
+<blockquote>
+<p>a &#x662F;&#x4ECE;&#x8001;&#x8868;&#x8FC1;&#x79FB;&#x5230;&#x65B0;&#x8868;&#xFF0C;&#x8868;&#x7ED3;&#x6784;&#x5B8C;&#x5168;&#x4E00;&#x81F4;&#xFF1F;&#x8001;&#x8868;&#x62C6;&#x6210;&#x591A;&#x5F20;&#x65B0;&#x8868;&#xFF1F;&#x591A;&#x5F20;&#x8001;&#x8868;&#x5408;&#x5E76;&#x5230;&#x4E00;&#x5F20;&#x65B0;&#x8868;&#xFF1F;<br>b &#x65E0;&#x8BBA;&#x662F;&#x90A3;&#x79CD;&#x5F62;&#x5F0F;&#xFF0C;&#x65B0;&#x8868;&#x548C;&#x8001;&#x8868;&#x7684;&#x5BF9;&#x5E94;&#x5404;&#x5B57;&#x6BB5;&#x7684;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;&#x90FD;&#x8981;&#x5B8C;&#x5168;&#x641E;&#x6E05;&#x695A;<br>c &#x9664;&#x4E86;&#x5B57;&#x6BB5;&#x5BF9;&#x5E94;&#x4E4B;&#x5916;&#xFF0C;&#x5B57;&#x6BB5;&#x5B9A;&#x4E49;&#x7684;&#x7C7B;&#x578B;&#x4EE5;&#x53CA;&#x957F;&#x5EA6;&#x90FD;&#x8981;&#x68C0;&#x67E5;&#x4E0B;&#xFF0C;&#x662F;&#x5426;&#x662F;&#x4E00;&#x81F4;&#x7684;&#x6216;&#x8005;&#x662F;&#x517C;&#x5BB9;&#x7684; </p>
+</blockquote>
+<h3 id="2&#x3001;&#x8001;&#x6570;&#x636E;&#x5BF9;&#x5E94;&#x7684;&#x4E0A;&#x6E38;&#x4E1A;&#x52A1;&#x8981;&#x641E;&#x6E05;&#x695A;">2&#x3001;&#x8001;&#x6570;&#x636E;&#x5BF9;&#x5E94;&#x7684;&#x4E0A;&#x6E38;&#x4E1A;&#x52A1;&#x8981;&#x641E;&#x6E05;&#x695A;</h3>
+<blockquote>
+<p>a &#x4E86;&#x89E3;&#x4E0B;&#x6709;&#x591A;&#x5C11;&#x670D;&#x52A1;&#x6216;&#x8005;&#x591A;&#x5C11;&#x5E94;&#x7528;&#x4F1A;&#x53BB;&#x67E5;&#x8FD9;&#x5F20;&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;&#xFF1F;<br>b  &#x786E;&#x8BA4;&#x4E0B;&#x6709;&#x64CD;&#x4F5C;&#x8FD9;&#x5F20;&#x8868;&#x5BF9;&#x5E94;&#x7684;&#x670D;&#x52A1;&#x662F;&#x5426;&#x90FD;&#x4F1A;&#x63A5;&#x5230;&#x65B0;&#x8868;&#x4E0A;&#xFF0C;&#x6216;&#x8005;&#x662F;&#x5DF2;&#x5E9F;&#x5F03;  </p>
+</blockquote>
+<h3 id="3&#x3001;&#x5982;&#x679C;&#x6570;&#x636E;&#x91CF;&#x5927;&#x7684;&#x8BDD;&#xFF0C;&#x5982;&#x679C;&#x5904;&#x7406;&#x8981;&#x641E;&#x6E05;&#x695A;">3&#x3001;&#x5982;&#x679C;&#x6570;&#x636E;&#x91CF;&#x5927;&#x7684;&#x8BDD;&#xFF0C;&#x5982;&#x679C;&#x5904;&#x7406;&#x8981;&#x641E;&#x6E05;&#x695A;</h3>
+<blockquote>
+<p>a &#x662F;&#x5426;&#x8981;&#x8003;&#x8651;&#x5206;&#x5E93;&#x5206;&#x8868;<br>b &#x662F;&#x5426;&#x8981;&#x8003;&#x8651;&#x5386;&#x53F2;&#x5F52;&#x6863;&#x8868;&#xFF0C;&#x5982;&#x679C;&#x6709;&#xFF0C;&#x653E;&#x5165;&#x5386;&#x53F2;&#x5F52;&#x6863;&#x8868;&#x7684;&#x89C4;&#x5219;&#x662F;&#x4EC0;&#x4E48;  </p>
+</blockquote>
+<h3 id="3&#x3001;&#x8FC1;&#x79FB;&#x5168;&#x8FC7;&#x7A0B;&#x6D4B;&#x8BD5;">3&#x3001;&#x8FC1;&#x79FB;&#x5168;&#x8FC7;&#x7A0B;&#x6D4B;&#x8BD5;</h3>
+<h4 id="31&#x6570;&#x636E;&#x5C42;&#x9762;&#x6BD4;&#x5BF9;">3.1&#x6570;&#x636E;&#x5C42;&#x9762;&#x6BD4;&#x5BF9;</h4>
+<blockquote>
+<p>a &#x8001;&#x6570;&#x636E;&#x662F;&#x5426;&#x90FD;&#x6309;&#x5B57;&#x6BB5;&#x7684;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;&#x8FC1;&#x79FB;&#x5230;&#x65B0;&#x8868;&#x4E0A;<br>b &#x8FC1;&#x79FB;&#x7684;&#x6570;&#x636E;&#x91CF;&#x662F;&#x5426;&#x6709;&#x591A;&#x8FC1;&#x79FB;&#x6216;&#x5C11;&#x8FC1;&#x79FB;<br>c SQL&#x811A;&#x672C;&#x7684;&#x68C0;&#x67E5;<br>d &#x6CE8;&#xFF1A;&#x5C24;&#x5176;&#x662F;&#x9664;&#x4E86;&#x5355;&#x7EAF;&#x7684;&#x65B0;&#x8001;&#x8868;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;&#x4E4B;&#x5916;&#xFF0C;&#x8FD8;&#x6709;&#x5176;&#x4ED6;&#x89C4;&#x5219;&#xFF0C;&#x6BD4;&#x5982;&#x8001;&#x6570;&#x636E;&#x4E2D;&#x7684;&#x91CD;&#x590D;&#x6570;&#x636E;&#xFF0C;&#x53BB;&#x4ECE;&#x8FC1;&#x79FB;&#xFF1B;&#x6BD4;&#x5982;&#x8001;&#x6570;&#x636E;&#x4E2D;&#x7684;&#x67D0;&#x4E2A;&#x5B57;&#x6BB5;&#x4E3A;&#x67D0;&#x5404;&#x503C;&#x7684;&#x65F6;&#x5019;&#x89C6;&#x4E3A;&#x5783;&#x573E;&#x6570;&#x636E;&#xFF1B;&#x65E5;&#x671F;&#x7684;&#x8F6C;&#x5316;&#xFF1B;&#x7A7A;&#x503C;&#x7684;&#x5224;&#x65AD;&#x7B49;&#x7B49;  </p>
+</blockquote>
+<h4 id="32&#x4E1A;&#x52A1;&#x5C42;&#x6D4B;&#x8BD5;-&#x8FC1;&#x79FB;&#x524D;">3.2&#x4E1A;&#x52A1;&#x5C42;&#x6D4B;&#x8BD5;-&#x8FC1;&#x79FB;&#x524D;</h4>
+<blockquote>
+<p>&#x6839;&#x636E;&#x4E1A;&#x52A1;&#x5B9E;&#x9645;&#x60C5;&#x51B5;&#xFF0C;&#x8BBE;&#x8BA1;&#x4E00;&#x6279;&#x8001;&#x6570;&#x636E;&#xFF0C;&#x4F5C;&#x4E3A;&#x8FC1;&#x79FB;&#x524D;&#x7684;&#x6570;&#x636E;&#x8001;&#x6570;&#x636E;&#x51C6;&#x5907;  </p>
+</blockquote>
+<h4 id="33&#x4E1A;&#x52A1;&#x5C42;&#x6D4B;&#x8BD5;-&#x8FC1;&#x79FB;&#x4E2D;">3.3&#x4E1A;&#x52A1;&#x5C42;&#x6D4B;&#x8BD5;-&#x8FC1;&#x79FB;&#x4E2D;</h4>
+<blockquote>
+<p>&#x8FC1;&#x79FB;&#x8FC7;&#x7A0B;&#x4E2D;&#x56E0;&#x4E3A;&#x8FD8;&#x662F;&#x4E0D;&#x65AD;&#x7684;&#x6709;&#x65B0;&#x6570;&#x636E;&#x5199;&#x5165;&#xFF0C;&#x8FD9;&#x4E2A;&#x8FC1;&#x79FB;&#x8FC7;&#x7A0B;&#x4E2D;&#x4F1A;&#x91C7;&#x7528;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x8FC1;&#x79FB;&#x65B9;&#x5F0F;&#xFF1F;&#x8FD9;&#x4E2A;&#x9700;&#x8981;&#x8003;&#x8651;&#x5230;&#xFF0C;&#x548C;&#x5F00;&#x53D1;&#x6C9F;&#x901A;&#x6E05;&#x695A;<br>a &#x662F;&#x505C;&#x673A;&#x8FC1;&#x79FB;&#xFF1F;<br>b &#x4E0D;&#x505C;&#x673A;&#xFF0C;&#x662F;&#x65B0;&#x8001;&#x670D;&#x52A1;&#x5E76;&#x5B58;&#xFF0C;&#x53CC;&#x5199;&#xFF1F;<br>c &#x4E0D;&#x505C;&#x673A;&#xFF0C;&#x662F;&#x8001;&#x670D;&#x52A1;&#x76F4;&#x63A5;&#x4E0B;&#x6389;&#xFF0C;&#x76F4;&#x63A5;&#x4E0A;&#x65B0;&#x670D;&#x52A1;&#xFF1F;<br>---------&#x4E0D;&#x540C;&#x7684;&#x7C7B;&#x578B;&#x8981;&#x8003;&#x8651;&#x4E0D;&#x540C;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x53CC;&#x5199;&#x7684;&#x8BDD;&#xFF0C;&#x8FD9;&#x4E9B;&#x91CD;&#x590D;&#x91CD;&#x590D;&#x5199;&#x5165;&#x7684;&#x6570;&#x636E;&#x4F1A;&#x5982;&#x4F55;&#x6BD4;&#x5BF9;&#x5E76;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x518D;&#x6B21;&#x8FC1;&#x79FB;&#x5230;&#x65B0;&#x8868;&#x4E2D;  </p>
+<p>&#x5176;&#x4ED6;&#x5B58;&#x50A8;&#x673A;&#x5236;&#x6709;&#x6CA1;&#x6709;&#x53D8;&#xFF0C;&#x6BD4;&#x5982;&#x4ECE;mysql&#x6539;&#x6210;&#x5B58;manggo&#x6216;&#x8005;ES&#x7B49;&#x7B49;&#xFF0C;&#x5982;&#x679C;&#x6709;&#xFF0C;&#x5219;&#x8FD8;&#x8981;&#x8003;&#x8651;&#x4E0D;&#x540C;&#x7684;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5BF9;&#x8C61;&#x7684;&#x7279;&#x6027;&#x53EF;&#x80FD;&#x4F1A;&#x6709;&#x4EC0;&#x4E48;&#x65B0;&#x7684;&#x95EE;&#x9898;&#x4EA7;&#x751F;  </p>
+</blockquote>
+<h4 id="34-&#x4E1A;&#x52A1;&#x5C42;&#x6D4B;&#x8BD5;-&#x8FC1;&#x79FB;&#x540E;">3.4 &#x4E1A;&#x52A1;&#x5C42;&#x6D4B;&#x8BD5;-&#x8FC1;&#x79FB;&#x540E;</h4>
+<blockquote>
+<p>a &#x6570;&#x636E;&#x5C42;&#x9762;&#x7684;&#x6D4B;&#x8BD5;&#x53C2;&#x8003;3.1<br>b &#x4E4B;&#x524D;&#x51C6;&#x5907;&#x7684;&#x8001;&#x6570;&#x636E;&#x6839;&#x636E;&#x4E4B;&#x524D;&#x6570;&#x636E;&#x8BBE;&#x8BA1;&#x7684;&#x573A;&#x666F;&#xFF0C;&#x7528;&#x8001;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x6D4B;&#x8BD5;<br>c &#x65B0;&#x7684;&#x4E1A;&#x52A1;&#x64CD;&#x4F5C;&#x5BF9;&#x5E94;&#x7684;&#x65B0;&#x6570;&#x636E;&#x5199;&#x5165;&#x662F;&#x5426;&#x6B63;&#x786E;  </p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../其他.html" class="navigation navigation-prev " aria-label="Previous page: 7.其他">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="下单接口.html" class="navigation navigation-next " aria-label="Next page: 7.2 下单接口">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"7.1 数据迁移类测试注意事项","level":"1.8.1","depth":2,"next":{"title":"7.2 下单接口","level":"1.8.2","depth":2,"path":"docs/others/下单接口.md","ref":"docs/others/下单接口.md","articles":[]},"previous":{"title":"7.其他","level":"1.8","depth":1,"path":"docs/其他.md","ref":"docs/其他.md","articles":[{"title":"7.1 数据迁移类测试注意事项","level":"1.8.1","depth":2,"path":"docs/others/数据迁移类测试注意事项.md","ref":"docs/others/数据迁移类测试注意事项.md","articles":[]},{"title":"7.2 下单接口","level":"1.8.2","depth":2,"path":"docs/others/下单接口.md","ref":"docs/others/下单接口.md","articles":[]},{"title":"7.3 测试常见考虑疏漏点","level":"1.8.3","depth":2,"path":"docs/others/测试常见考虑疏漏点.md","ref":"docs/others/测试常见考虑疏漏点.md","articles":[]},{"title":"7.4 和产品的约定","level":"1.8.4","depth":2,"path":"docs/others/和产品的约定.md","ref":"docs/others/和产品的约定.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/others/数据迁移类测试注意事项.md","mtime":"2017-08-28T11:22:35.639Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-29T06:50:45.936Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
