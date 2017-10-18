@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 **前言 dubbo 接口测试和普通的HTTP接口测试过程是一样，只不过连接方式不同，
 下文主要就介绍怎么样连接一个dubbo服务**<br/>
 **提示：当前 dubbo 服务只能在开发环境先调通，然后推到测试环境跑，目前限制如此**<br/>
@@ -160,8 +160,4 @@ FAILED_OTHER
 
 部分内容参考至 http://dubbo.io/ <br/>
 @Powered by GrayHouse
-=======
-# 1.6 dubbo 接口测试
 
-# dubbo 接口测试和
->>>>>>> 2ac2e987c230caf4fc3e12556e9d39488bcb061f

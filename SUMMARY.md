@@ -16,6 +16,7 @@
     * [5.2 xshell](docs/tools/Xshell使用.md)
     * [5.3 fiddler](docs/tools/fiddler使用.md)
     * [5.4 navicat](docs/tools/navicat使用.md)
+    * [5.5 selenium 简单实践](docs/tools/Selenium简单实践.md)
 * [6.测试周边技术补习](docs/测试周边技术.md)
     * [6.1 git的使用](docs/tips/git.md)
     * [6.2 markdown基础语法](docs/tips/markdown.md)
@@ -23,5 +24,8 @@
     * [7.1 数据迁移类测试注意事项](docs/others/数据迁移类测试注意事项.md)
     * [7.2 下单接口](docs/others/下单接口.md)
     * [7.3 测试常见考虑疏漏点](docs/others/测试常见考虑疏漏点.md)
-    * [7.4 和产品的约定](docs/others/和产品的约定.md)
+    * [7.4 项目过程中测试与产品的约定](docs/others/项目过程中测试与产品的约定.md)
+    * [7.5 测试中常用操作](docs/others/常用操作.md)
+    * [7.6 项目测试规范](docs/others/项目测试规范.md)
+    * [7.7 ADB常用命令](docs/others/ADB命令.MD)
 

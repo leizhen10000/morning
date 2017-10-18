@@ -70,8 +70,12 @@ cat主要是连接文件并打印输出文件
 
 - **查看渠道订单下单日志**  
 **使用背景**：订单经常会下单不成功，这个时候，需要去看对应的【下单】接口或者【下单订单】  
-&emsp;**日志所在位置**：p-->0-->hulk-->hulk-api.log  
-&emsp;**现在日志迁移到了新位置**：p-->6-->sparta-web-->sparta-web.log
+**日志所在位置**：  
+&emsp;p-->7/app014-->docking-normal  
+**现在日志迁移到了新位置**：  
+&emsp;eleme  : p-->8/app016-->docking-callback-eleme  
+&emsp;普通渠道: p-->1/app006-->iron-global   
+&emsp;**揽件和同城下单日志**:p-->12/app012-->docking-alibaba
 
 - **查看骑手相关日志（抢单、订单详情等）**  
 &emsp;**命令**：cat flash-day.log | grep rob-order-list.json  --color  
